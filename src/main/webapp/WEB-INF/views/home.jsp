@@ -3,7 +3,9 @@
 <%@ page session="false" %>
 <html>
  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="/js/bootstrap.js"> 
+ <script type="text/javascript" src="/js/jquery-3.1.1.js"></script>
+
+  
 <head>
 	<title>Home</title>
 </head>
@@ -13,6 +15,12 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+
+<input type="text" id="phone" name="phone" value="12341123"/>
+ <script>
+   var a = $('#phone').val();
+   console.log(a);
+ </script>
 </body>
 </html>
  
