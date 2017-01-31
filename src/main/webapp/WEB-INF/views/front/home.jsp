@@ -14,8 +14,8 @@
   
 
  
-  <%@include file="header.jsp" %>
-  
+ <%@include file="../front/sub/header.jsp" %>
+   
   <style>
   
   .container-fluid{
@@ -161,7 +161,7 @@
     </div> 
   </div>
 </div><br>
-<%@include file="footer.jsp" %>
+ <%@include file="../front/sub/footer.jsp" %>  
 <!--<footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>-->
