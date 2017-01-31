@@ -157,7 +157,7 @@
     </div>     
     <div class="col-sm-2"> 
       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 6</p>
+      <p>Partner 63</p>
     </div> 
   </div>
 </div><br>
