@@ -1,0 +1,45 @@
+@CHARSET "EUC-KR";
+
+
+#footer_wrap{
+	border-top:#143a82 2px solid;
+	margin-top:10px;
+	overflow:hidden;
+	font-size:11px;
+}
+
+#footer{
+	margin-top:10px;
+	margin-left:205px;
+}
+
+#footer_wrap div{
+	float:left;
+}
+
+#footer_menu li{
+	list-style:none;
+	float:left;
+}
+#footer_banner{
+	margin-left:0px;
+}
+#footer_banner li{
+	list-style:none;
+	float:left;
+	margin-left:35px;
+}
+
+#footer_info{
+	margin-left:374px;
+	color:#555;
+}
+
+#info2{
+	margin-left:74px;
+	
+}
+
+
+
+
