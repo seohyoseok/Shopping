@@ -6,18 +6,25 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<!-- Oracle DataSource Bean -->
+	<bean id="propertyConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:app.properties</value>
+		</property>
+	</bean>
+	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@oracleserver:1521:xe" />
-		<property name="username" value="admin" />
-		<property name="password" value="admin" />
+		<property name="driverClassName" value="${db.Driver}" />
+		<property name="url" value="${db.url}" />
+		<property name="username" value="${db.username}" />
+		<property name="password" value="${db.password}" />
 	</bean>
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="mapperLocations" value="classpath*:sql/**/*.xml" />
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-	
+
 	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
