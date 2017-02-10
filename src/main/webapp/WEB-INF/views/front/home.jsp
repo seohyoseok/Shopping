@@ -161,9 +161,11 @@
     </div> 
   </div>
 </div><br>
-<form enctype="multipart/form-data" action="/ftpUpload.do">
-   <input type="file" name="upfile">
-   <input type="submit" value="업로드">
+<form method="post" enctype="multipart/form-data" action="/ftpUpload.do">
+   <input type="file" name="file1">
+   <input type="file" name="file2">
+   <input type="file" name="file3">
+   <input type="submit" value="업로드"> 
    <input type="reset" value="취소">
 </form>
  <%@include file="../front/sub/footer.jsp" %>  
