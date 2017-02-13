@@ -61,26 +61,8 @@ public class FTP {
 	@RequestMapping(value = "/ftpUpload.do", method = RequestMethod.POST)
 	public String upload2(HttpServletRequest request) throws IOException {
 
-		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
-		Iterator<String> iterator = multipartHttpServletRequest.getFileNames();
-		boolean mimeCheck = false;
-		FTPCommon.connectFtp();
-		while (iterator.hasNext()) {
-			System.out.println("dmd");
-			MultipartFile multipartFile = multipartHttpServletRequest.getFile((String) iterator.next());
-
-			if (multipartFile.isEmpty() == false) {
-				String orignFilename = multipartFile.getOriginalFilename();
-				mimeCheck = MimeCheck.mimecheck(orignFilename);
-
-				if (mimeCheck == true) {
-					FTPCommon.uploadFtp();
-				} else {
-					System.out.println("접근불가");
-				}
-			}
-		}
-		FTPCommon.disconnectFtp();
+		FileUpload.upload(request);
+		
 		return "/front/home";
 
 	}
