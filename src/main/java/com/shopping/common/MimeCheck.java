@@ -30,7 +30,6 @@ public class MimeCheck {
 		
 		for(int i=0; i<validType.length; i++){ //웹의 마임타입과 리스트의 마입타입과 비교
 		    if(validType[i].equals(mimeType)){
-		    	System.out.println("마임타입을 비교중입니다.");
 		    	mimeCheck=true;                // 맞으면 true
 		    	break;
 		    }
