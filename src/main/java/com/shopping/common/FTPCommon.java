@@ -53,7 +53,7 @@ public class FTPCommon {
 
 			// 채널을 FTP용 채널 객체로 개스팅
 			chSftp = (ChannelSftp) ch;
-
+            System.out.println("연결완료");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -70,16 +70,17 @@ public class FTPCommon {
 	}
 
 	/* 파일 업로드 */
-	public static void uploadFtp() {
-
-		String filePath = "C:/Users/seo/Desktop/1.jpg"; // 나중에 DB에서 필요한 경로 당기면
-														// good
-
+	public static void uploadFtp(String filename) {
+        System.out.println("파일 보내는중");
+		String filePath = "C:/Users/seo/Desktop/"+filename;
+		System.out.println("filePath:"+filePath);
+	    										
 		File file = new File(filePath); // file 객체 생성 (파일 경로 입력)
 		try {
 			fi = new FileInputStream(file);
 			chSftp.cd("/"); // 서버의 경로
 			chSftp.put(fi, file.getName()); // 서버에 파일 보내기
+			System.out.println("파일보냄 완료");
 		} catch (SftpException e) {
 			e.printStackTrace();
 		} catch (FileNotFoundException e) {
