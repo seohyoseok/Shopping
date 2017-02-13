@@ -59,9 +59,9 @@ public class FTP {
 	 */
 
 	@RequestMapping(value = "/ftpUpload.do", method = RequestMethod.POST)
-	public String upload2(HttpServletRequest request) throws IOException {
+	public String upload2(HttpServletRequest request, HttpServletResponse reponse) throws IOException {
 
-		FileUpload.upload(request);
+		FileUpload.upload(request,reponse);
 		
 		return "/front/home";
 
