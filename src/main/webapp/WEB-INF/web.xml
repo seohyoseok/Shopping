@@ -31,7 +31,7 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
+    <!-- .do 매핑 -->
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>*.do</url-pattern>
@@ -51,11 +51,16 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping> 
-	<!-- 한글출력 설정 끝 -->
 	
-<welcome-file-list>
-    <welcome-file>main.do</welcome-file>
-</welcome-file-list>
+	<!-- 세션유지시간 서효석 -->
+	<session-config>
+	   <session-timeout>30</session-timeout>
+	</session-config>
+	
+	<!-- 첫번째 보여줄 페이지 설정 -->
+    <welcome-file-list>
+       <welcome-file>main.do</welcome-file>
+    </welcome-file-list>
 
 	<!-- spring security chain 추가 -->
 	<!-- <filter>
