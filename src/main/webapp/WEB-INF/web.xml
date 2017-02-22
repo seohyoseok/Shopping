@@ -38,7 +38,7 @@
 	</servlet-mapping>
 
 
-	<!-- 2017 01 23 한글출력 설정 서효석 -->
+	<!--한글출력 설정-->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -61,6 +61,18 @@
     <welcome-file-list>
        <welcome-file>main.do</welcome-file>
     </welcome-file-list>
+    
+    <!-- xss(크로스사이트스크립팅 방지) -->
+	<filter>
+        <filter-name>HTMLTagFilter</filter-name>
+        <filter-class>
+            com.shopping.common.HTMLTagFilter
+        </filter-class>
+    </filter>
+	<filter-mapping>
+        <filter-name>HTMLTagFilter</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>	
 
 	<!-- spring security chain 추가 -->
 	<!-- <filter>
