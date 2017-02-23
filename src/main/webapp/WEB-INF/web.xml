@@ -63,12 +63,10 @@
     </welcome-file-list>
     
     <!-- xss(크로스사이트스크립팅 방지) -->
-	<filter>
+ 	<filter>
         <filter-name>HTMLTagFilter</filter-name>
-        <filter-class>
-            com.shopping.common.HTMLTagFilter
-        </filter-class>
-    </filter>
+        <filter-class>com.shopping.common.HTMLTagFilter</filter-class>
+    </filter> 
 	<filter-mapping>
         <filter-name>HTMLTagFilter</filter-name>
         <url-pattern>*.do</url-pattern>
